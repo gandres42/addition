@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8">
+<script>
+const p = new URLSearchParams(location.search);
+const a = p.get('a'), b = p.get('b');
+if (a !== null && b !== null) {
+  const x = Number(a), y = Number(b);
+  const sum = (Number.isFinite(x) && Number.isFinite(y)) ? x + y : a + b;
+  document.open('text/plain');
+  document.write(sum);
+  document.close();
+} else {
+  document.open('text/plain');
+  document.write('');
+  document.close();
+}
+</script>
